@@ -1,7 +1,8 @@
 package com.khamurai.aodlabb2;
 
-public class Main {
+import static com.khamurai.aodlabb2.BubbleSort.bubbleSort;
 
+public class Main {
 
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
@@ -21,10 +22,7 @@ public class Main {
         bt.printInPreOrder(bt.root);
         System.out.println("IN REVERSE ORDER=======================");
         bt.printInReverseOrder(bt.root);
-        System.out.println("=======================");
-        bt.remove(25);
 
-        System.out.println("=======================");
         System.out.println("IN POST ORDER=======================");
         bt.printInPostOrder(bt.root);
         System.out.println("IN PRE-ORDER=======================");
@@ -34,7 +32,7 @@ public class Main {
         System.out.println("IN REVERSE ORDER=======================");
         bt.printInReverseOrder(bt.root);
 
-        /*
+        System.out.println("ARRAY_PRE===========================");
         int[] intArray = {3, 6, 65, 11, 5, 1};
 
         for(int i : intArray) {
@@ -42,31 +40,9 @@ public class Main {
         }
 
         bubbleSort(intArray);
-
+        System.out.println("SORTED ARRAY===========================");
         for(int i : intArray) {
             System.out.println(i);
         }
-
-         */
-
-
     }
-
-    public static void bubbleSort(int[] intArray) {
-        for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
-            for (int i = 0; i < lastUnsortedIndex; i++) {
-                if(intArray[i] > intArray[i + 1]) {
-                    swap(intArray, i, i + 1);
-                }
-            }
-        }
-    }
-
-    public static void swap (int[] array, int i, int j) {
-        if (i == j) return;
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-
 }
